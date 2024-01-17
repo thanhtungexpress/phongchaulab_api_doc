@@ -8,9 +8,11 @@
 > *Mã TOKEN sẽ hết hạn sau một giờ. Nếu hết hạn, vui lòng GET lại token.*
   
 **Response example**
-> {
+```json
+{
     "token": "eyJhbGciOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIiwia2lkIjoicW8zRTlISVE1SWh0N2U4dktoRzJtc1hhNHJNVUFrTUQifQ.eyJ1c2VybmFtZSI6InBob25nY2hhdWxhYl9hcGkiLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE3MDU0NjI3MjQsImV4cCI6MTcwNTQ2NjMyNCwiaXNzIjoicGhvbmdjaGF1bGFiX2FwaSIsImF1ZCI6ImFwaSJ9.Q0BXPB72ex7WbFU-AgvsEzgK9NZ6IMubrVepwOSUdus"
 }
+```
 ## API Post Result:
 - Endpoint: [http://api-url/saveresultdata](http://api-url/saveresultdata)
 - Method: POST
@@ -25,65 +27,71 @@
 > *Message: Mô tả của response*
   
 **POST result example**
-> curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer my_token" -d '{
+
+*Header*
+```
+Authorization:Bearer eyJhbGciOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIiwia2lkIjoicW8zRTlISVE1SWh0N2U4dktoRzJtc1hhNHJNVUFrTUQifQ.eyJ1c2VybmFtZSI6InBob25nY2hhdWxhYl9hcGkiLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE3MDU0ODg4MTMsImV4cCI6MTcwNTQ5MjQxMywiaXNzIjoicGhvbmdjaGF1bGFiX2FwaSIsImF1ZCI6ImFwaSJ9.emskgyawz3TLaCuJxhytw0hC3UGd0HV7qz34QYSwW_c
+```
+*Body*
+```json
+{
   "SampleId": "123",
-  "Stt": "1",
-  "NgayChidinh": "2024-01-14T10:00:00",
+  "Stt": "A001",
+  "NgayChidinh": "2024-01-17T08:00:00",
   "MaBenhNhan": "BN001",
   "SoBienLai": "BL001",
   "TenBenhNhan": "John Doe",
   "DiaChi": "123 Main Street",
   "NamSinh": 1990,
   "GioiTinh": "Male",
-  "ChanDoan": "Fever",
+  "ChanDoan": "Common Cold",
   "TenDoiTuong": "Insurance",
-  "TenNoiChidinh": "Lab Center",
+  "TenNoiChidinh": "Medical Center",
   "TenBacSi": "Dr. Smith",
   "Email": "john.doe@example.com",
-  "DienThoai": "123456789",
-  "ThoiGianLayMau": "2024-01-14T09:30:00",
+  "DienThoai": "123-456-7890",
+  "ThoiGianLayMau": "2024-01-17T10:30:00",
   "UserI": "user123",
-  "InTime": "2024-01-14T11:00:00",
-  "Pdfresult": "",
+  "InTime": "2024-01-17T12:45:00",
+  "Pdfresult": null,
   "KetQua": [
     {
       "MaxetNghiem": "XN001",
       "TenXetNghiem": "Blood Test",
       "KetQua": "Normal",
-      "ChiSoBinhThong": "123",
+      "ChiSoBinhThong": "Healthy Range",
       "DonVi": "mg/dL",
       "BatThuong": false,
-      "TenNhomXN": "General",
+      "TenNhomXN": "General Health",
       "ThuTuNhomXN": 1,
       "ThuTuSapXep": 1,
       "InDam": true,
-      "InDamKetQua": false,
+      "InDamKetQua": true,
       "XetNghiemChinh": true,
       "FontSize": 12,
-      "UserUpdate": "user123",
-      "DateUpdate": "2024-01-14T12:30:00"
-    },
-    {
-      "MaxetNghiem": "XN002",
-      "TenXetNghiem": "Blood Test2",
-      "KetQua": "Normal",
-      "ChiSoBinhThong": "124",
-      "DonVi": "mg/dL",
-      "BatThuong": false,
-      "TenNhomXN": "General",
-      "ThuTuNhomXN": 1,
-      "ThuTuSapXep": 1,
-      "InDam": true,
-      "InDamKetQua": false,
-      "XetNghiemChinh": true,
-      "FontSize": 12,
-      "UserUpdate": "user123",
-      "DateUpdate": "2024-01-14T12:30:00"
+      "UserUpdate": "admin",
+      "DateUpdate": "2024-01-17T14:30:00",
+      "KetQuaPdf": [
+        {
+          "Sampleid": "123",
+          "Maxetnghiem": "XN001",
+          "Pdfresult": "varbinary(max)",
+          "Pdfname": "BloodTestResult.pdf",
+          "Dateinsert": "2024-01-17T14:45:00"
+        }
+      ]
     }
   ]
-}' http://api-url/saveresultdata
+}
+```
+*Response from API*
 
-
+```json
+{
+    "success": true,
+    "message": "Data saved successfully."
+}
+```
 ## Mô tả các trường
 ### Bệnh nhân
 ```sql
@@ -105,7 +113,6 @@ Dienthoai varchar(15) --(Điện Thoại): Số điện thoại của bệnh nh�
 Thoigianlaymau datetime --(Thời Gian Lấy Mẫu): Thời gian lấy mẫu từ bệnh nhân.
 Useri varchar(30) --(Người Dùng): Người dùng thực hiện thao tác.
 Intime datetime --(Thời Gian Nhận Lệnh): Thời gian nhận lệnh.
-Pdfresult varbinary(MAX) --(Kết Quả PDF): Kết quả được xuất ra dưới định dạng PDF.
 ```
 ### Kết quả
 ```sql
@@ -125,6 +132,13 @@ Xetnghiemchinh bit (boolean) --(Xét Nghiệm Chính): Trạng thái xác địn
 Fontsize int --(Kích Thước Font): Kích thước font chữ sử dụng cho kết quả xét nghiệm.
 Userupdate varchar(30) --(Người Cập Nhật): Người dùng thực hiện cập nhật kết quả.
 Dateupdate datetime --(Ngày Cập Nhật): Ngày và giờ khi kết quả xét nghiệm được cập nhật.
+```
+### Kết quả PDF
+```sql
+Sampleid varchar(30) --(Mẫu ID): ID của mẫu bệnh phẩm.
+Maxetnghiem varchar(30) --(Mã Xét Nghiệm): Mã xét nghiệm của kết quả.
+Pdfresult varbinary(MAX) --(Kết Quả PDF): Kết quả được xuất ra dưới định dạng PDF.
+Pdfname varchar(255) --(Tên file kết Quả PDF): Tên file kết quả PDF.
 ```
 ### Model
 ```c#
@@ -148,7 +162,6 @@ Dateupdate datetime --(Ngày Cập Nhật): Ngày và giờ khi kết quả xét
         public DateTime ThoiGianLayMau { get; set; }
         public string UserI { get; set; }
         public DateTime InTime { get; set; }
-        public byte[]? Pdfresult { get; set; }
         public List<ResultDataModelKetQua> KetQua { get; set; }
     }
     public class ResultDataModelKetQua
@@ -168,5 +181,14 @@ Dateupdate datetime --(Ngày Cập Nhật): Ngày và giờ khi kết quả xét
         public byte FontSize { get; set; }
         public string UserUpdate { get; set; }
         public DateTime DateUpdate { get; set; }
+        public List<ResultDataModelKetQuaPdf> KetQuaPdf { get; set; }
+    }
+    public class ResultDataModelKetQuaPdf
+    {
+        public string Sampleid { get; set; } = null!;
+        public string Maxetnghiem { get; set; } = null!;
+        public byte[]? Pdfresult { get; set; }
+        public string? Pdfname { get; set; }
+        public DateTime Dateinsert { get; set; }
     }
 ```
