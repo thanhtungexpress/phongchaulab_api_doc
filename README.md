@@ -144,7 +144,7 @@ Maxetnghiem varchar(30) --(Mã Xét Nghiệm): Mã xét nghiệm của kết qu�
 Pdfresult varbinary(MAX) --(Kết Quả PDF): Kết quả được xuất ra dưới định dạng PDF.
 Pdfname varchar(255) --(Tên file kết Quả PDF): Tên file kết quả PDF.
 ```
-### Model
+## Model
 ```c#
     public class ResultDataModel
     {
