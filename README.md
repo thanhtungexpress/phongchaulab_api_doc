@@ -1,6 +1,6 @@
 # API NHẬN KẾT QUẢ TỪ LIS
 > - *LIS chỉ upload kết quả khi người dùng thao tác in hoặc duyệt kết quả*
-> - *Trường hợp kết quả có thay đổi kết quả thì upload lại -> API sẽ ghi đè kết quả kể cả kết quả rỗng.*
+> - *Trường hợp kết quả có thay đổi thì upload lại -> API sẽ ghi đè kết quả kể cả kết quả rỗng.*
 > - *Kết quả PDF phải được upload kèm theo kết quả chỉ số*
 > - *Vui lòng xem JSON ví dụ về POST kết quả bên dưới*
 ## API Get Token:
