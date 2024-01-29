@@ -56,8 +56,7 @@ Authorization:Bearer eyJhbGciOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIiwia2lkIjoicW8
   "DienThoai": "123-456-7890",
   "ThoiGianLayMau": "2024-01-17T10:30:00",
   "UserI": "user123",
-  "InTime": "2024-01-17T12:45:00",
-  "Pdfresult": null,
+  "InTime": "2024-01-17T12:45:00"
   "KetQua": [
     {
       "MaxetNghiem": "XN001",
