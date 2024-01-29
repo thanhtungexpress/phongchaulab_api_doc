@@ -195,3 +195,10 @@ Pdfname varchar(255) --(Tên file kết Quả PDF): Tên file kết quả PDF.
         public DateTime Dateinsert { get; set; }
     }
 ```
+# LINK CREATE QR CODE XEM KẾT QUẢ
+https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/{datein}/{seq}
+> - **{datein}**: Ngày xét nghiệm (format dd-MM-yyyy)
+> - **{seq}**: số barcode
+
+**Example**
+> *https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/29-01-2024/1234*
