@@ -196,9 +196,10 @@ Pdfname varchar(255) --(Tên file kết Quả PDF): Tên file kết quả PDF.
     }
 ```
 # LINK CREATE QR CODE XEM KẾT QUẢ
-https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/{datein}/{seq}
-> - **{datein}**: Ngày xét nghiệm (format dd-MM-yyyy)
-> - **{seq}**: số barcode
+https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/{datein}/{seq}/{age}
+> - *{datein}*: Ngày xét nghiệm (format dd-MM-yyyy)
+> - *{seq}*: số barcode (ví dụ: 1234)
+> - *{age}*: Năm sinh (ví dụ: 1990)
 
 **Example**
-> *https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/29-01-2024/1234*
+> *https://ketqua.phongchaulab.com/ket-qua-xet-nghiem/29-01-2024/1234/1990*
