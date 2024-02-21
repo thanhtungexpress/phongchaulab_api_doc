@@ -74,6 +74,7 @@ Authorization:Bearer eyJhbGciOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIiwia2lkIjoicW8
       "FontSize": 12,
       "UserUpdate": "admin",
       "DateUpdate": "2024-01-17T14:30:00",
+      "Ttxn": 1
       "KetQuaPdf": [
         {
           "Sampleid": "123",
@@ -135,6 +136,7 @@ Xetnghiemchinh bit (boolean) --(Xét Nghiệm Chính): Trạng thái xác địn
 Fontsize int --(Kích Thước Font): Kích thước font chữ sử dụng cho kết quả xét nghiệm.
 Userupdate varchar(30) --(Người Cập Nhật): Người dùng thực hiện cập nhật kết quả.
 Dateupdate datetime --(Ngày Cập Nhật): Ngày và giờ khi kết quả xét nghiệm được cập nhật.
+Ttxn int --(Thứ tự xét nghiệm): Thứ tự xét nghiệm thể hiện tương ứng trên phiếu kết quả.
 ```
 ### Kết quả PDF
 ```sql
