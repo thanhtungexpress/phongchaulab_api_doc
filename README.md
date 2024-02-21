@@ -136,7 +136,7 @@ Xetnghiemchinh bit (boolean) --(Xét Nghiệm Chính): Trạng thái xác địn
 Fontsize int --(Kích Thước Font): Kích thước font chữ sử dụng cho kết quả xét nghiệm.
 Userupdate varchar(30) --(Người Cập Nhật): Người dùng thực hiện cập nhật kết quả.
 Dateupdate datetime --(Ngày Cập Nhật): Ngày và giờ khi kết quả xét nghiệm được cập nhật.
-Ttxn int --(Thứ tự xét nghiệm): Thứ tự xét nghiệm thể hiện tương ứng trên phiếu kết quả.
+Ttxn int --(Thứ tự xét nghiệm): Thứ tự xét nghiệm thể hiện tương ứng trên phiếu kết quả (truyền null nếu không có).
 ```
 ### Kết quả PDF
 ```sql
